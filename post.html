@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Post</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="/fonts/share-tech-mono.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+</head>
+<body>
+  <div id="fx-root" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div>
+        <a class="back" href="index.html">← All posts</a>
+        <h1 id="postTitle">Loading…</h1>
+        <p id="postMeta" class="post-meta"></p>
+      </div>
+      <button id="readerToggle" class="reader-btn" type="button" aria-pressed="false" title="Toggle Easy Reader">
+        Easy Reader: Off
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <img id="postImage" class="hero" alt="" />
+    <article id="postContent" class="prose"></article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>(c)<span id="year"></span> <a href="../" style="color:#000; ">You</a></small>
+    </div>
+  </footer>
+
+  <script src="post.js" type="module"></script>
+</body>
+</html>

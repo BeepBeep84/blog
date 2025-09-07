@@ -1,0 +1,190 @@
+/* ========================================
+   BLOG TEMPLATE CSS
+   - Clear tokens + sections
+   - Minimal defaults, easy to theme
+   ======================================== */
+
+/* ------------------------------
+   THEME TOKENS (edit these)
+   ------------------------------ */
+:root{
+  /* Colors */
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --border: #e5e7eb;           
+  --card: #ffffff;
+
+  /* Brand accents */
+  --accent: #0ea5e9;           
+  --accent-contrast: #ffffff;
+
+  /* Chips (filter pills) */
+  --chip-bg: #f3f4f6;
+  --chip-fg: #111111;
+  --chip-bg-active: #0ea5e9;
+  --chip-fg-active: #ffffff;
+
+  /* Typography */
+  --font-base: system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --size-base: 16px;
+  --size-h1: clamp(26px, 3.2vw, 34px);
+  --size-h2: clamp(20px, 2.6vw, 26px);
+
+  /* Layout / spacing */
+  --container: 1100px;
+  --radius: 12px;
+  --radius-pill: 999px;
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+}
+
+/* Optional high-contrast “Reader Mode” (toggled in UI) */
+.reader-on{
+  --bg:#000000;
+  --text:#ffffff;
+  --muted:#d1d5db;
+  --border:#374151;
+  --card:#0b0b0b;
+  --chip-bg:#111827;
+  --chip-fg:#e5e7eb;
+  --chip-bg-active:#ffffff;
+  --chip-fg-active:#111111;
+}
+
+/* ------------------------------
+   GLOBAL / RESETS
+   ------------------------------ */
+*{ box-sizing:border-box }
+html, body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--text);
+  font: 400 var(--size-base)/1.6 var(--font-base);
+}
+img{ max-width:100%; height:auto; display:block }
+a{ color:var(--text); text-decoration:none; font-weight:600 }
+a:hover{ text-decoration:underline }
+.container{ max-width:var(--container); margin:0 auto; padding:0 var(--space-4) }
+
+/* ------------------------------
+   HEADER / FOOTER
+   ------------------------------ */
+.site-header{ padding: var(--space-5) 0; border-bottom:1px solid var(--border) }
+.header-row{ display:flex; justify-content:space-between; align-items:center; gap: var(--space-3) }
+h1{ margin:0 0 var(--space-1); font-size: var(--size-h1) }
+.tagline{ margin:0; color:var(--muted) }
+
+.site-footer{
+  border-top:1px solid var(--border);
+  margin-top: var(--space-6);
+  padding: var(--space-4) 0;
+  color: var(--muted);
+}
+
+/* Reader toggle button */
+.reader-btn{
+  background:transparent; color:var(--text);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:8px 12px; cursor:pointer; white-space:nowrap;
+}
+
+/* ------------------------------
+   CONTROLS (filters + sort)
+   ------------------------------ */
+.controls{
+  display:grid; grid-template-columns:minmax(0,1fr) auto;
+  align-items:center; gap: var(--space-3);
+  margin: var(--space-4) 0 var(--space-2);
+}
+.filters{ display:flex; flex-wrap:wrap; gap: clamp(6px,1.2vw,10px) }
+.filters .chip{
+  display:inline-block;
+  border:1px solid var(--border);
+  background:var(--chip-bg);
+  color:var(--chip-fg);
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  cursor:pointer;
+  font-weight:500;
+  font-size: 14px;
+}
+.filters .chip:hover,
+.filters .chip.active{
+  background:var(--chip-bg-active);
+  color:var(--chip-fg-active);
+}
+.sort{ display:flex; gap:8px; justify-content:flex-end; align-items:center }
+.sort label{ color:var(--muted) }
+select{
+  background:#fff; color:#000; border:1px solid var(--border);
+  border-radius: var(--radius); padding:8px 10px;
+}
+
+/* ------------------------------
+   CARD GRID (index)
+   ------------------------------ */
+.cards{ display:grid; grid-template-columns:1fr; gap:16px; margin:16px 0 }
+@media (min-width:760px){ .cards{ grid-template-columns:1fr 1fr } }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+}
+.card img{ width:100%; height:200px; object-fit:cover }
+.card .body{ padding: 12px 14px }
+.card h2{ margin:0 0 6px; font-size: var(--size-h2) }
+.card .meta{ color:var(--muted); font-size:0.95rem; margin-bottom:8px }
+.card p{ margin:0 }
+
+/* ------------------------------
+   PAGINATION
+   ------------------------------ */
+.pagination{
+  display:flex; gap:12px; align-items:center; justify-content:center;
+  margin:18px 0;
+}
+.pagination button{
+  background:transparent; color:var(--text);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:8px 12px; cursor:pointer;
+}
+.pagination button[disabled]{ opacity:.5; cursor:not-allowed }
+
+/* ------------------------------
+   POST PAGE
+   ------------------------------ */
+.back{ color:var(--muted) }
+.post-meta{ color:var(--muted) }
+
+.hero{
+  width:100%; height:auto; object-fit:contain;
+  border-bottom:1px solid var(--border);
+  display:none; /* shown if post has image */
+}
+
+/* Minimal “prose” styles for markdown output */
+.prose{ padding:16px 0 }
+.prose h1,.prose h2,.prose h3,.prose h4,.prose h5,.prose h6{ margin: 1.2em 0 .6em }
+.prose p{ margin: .8em 0 }
+.prose ul{ padding-left: 1.2em; margin: .8em 0 }
+.prose li{ margin: .3em 0 }
+.prose a{ color: var(--accent) }
+.prose pre{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:12px; border-radius:10px; overflow:auto;
+}
+.prose code{ font-family: var(--font-mono) }
+.inline-img{
+  max-width:100%; height:auto; display:block;
+  margin:12px auto; border:1px solid var(--border); border-radius:8px;
+}

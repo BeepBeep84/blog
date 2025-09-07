@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "title": "Welcome - Using this Free Blog Template",
+      "date": "2025-09-05",
+      "topic": "Getting Started",
+      "image": "images/sample_image_1.jpg",
+      "seo_description": "How to set up the minimal JSON-powered blog template: folder structure, posts.json, and deployment tips.",
+      "seo_keywords": ["static blog", "json blog", "no-build blog"],
+      "content": "# What this is\n\nA lightweight, no-build blog. Posts live in **posts.json** and are rendered by the browser.\n\n## Files\n- `index.html` - list of posts\n- `post.html` - single post\n- `posts.json` - your content\n- `styles.css` - theme variables\n- `app.js` / `post.js` - logic\n\n## How to add a post\n1. Add an item to the `posts` array in `posts.json`.\n2. Set a unique **title** and **date** (YYYY-MM-DD). The slug is built from `title-date`.\n3. Optional: set **topic**, **image**, **seo_description**, **seo_keywords`**.\n\n## Local testing\nUse a simple server (e.g. `python -m http.server`) so `fetch('posts.json')` works.\n\n## Deploying\nUpload these files anywhere that serves static files (GitHub Pages, Netlify, etc.)."
+    },
+    {
+      "title": "Customize the Theme (Edit CSS Tokens)",
+      "date": "2025-09-04",
+      "topic": "Customization",
+      "image": "images/sample_image_2.jpg",
+      "seo_description": "Edit a few CSS variables to restyle colors, spacing, and typography.",
+      "seo_keywords": ["css variables", "theme tokens", "customize blog"],
+      "content": "# Quick theming via CSS variables\n\nOpen `styles.css` and edit the **THEME TOKENS** section at the top.\n\n## Common edits\n- **Colors**: `--bg`, `--text`, `--border`, `--accent`\n- **Typography**: `--font-base`, `--size-h1`, `--size-h2`\n- **Radius**: `--radius`, `--radius-pill`\n- **Spacing**: `--space-*`\n\n```css\n:root{\n  --bg:#ffffff; --text:#111111; --accent:#0ea5e9;\n}\n```\n\n## Reader Mode\nThe **Easy Reader** button toggles `.reader-on`, which swaps to a high-contrast palette. Change those variables under the `.reader-on` block in `styles.css`.\n\n## Cards & chips\nComponent styles are in clearly labeled sections so you can tweak borders, padding and font sizes without hunting around."
+    },
+    {
+      "title": "Write Posts with Supported Markdown",
+      "date": "2025-09-03",
+      "topic": "Writing",
+      "image": "images/sample_image_3.jpg",
+      "seo_description": "What markdown is supported by the built-in parser, with examples.",
+      "seo_keywords": ["markdown", "how to write posts", "formatting"],
+      "content": "# Supported markdown\n\nThis template uses a tiny parser, so keep it simple.\n\n## Headings\nUse `#` through `######`:\n\n```\n# H1\n## H2\n### H3\n```\n\n## Bold & italics\n- **bold** with `**text**` or `__text__`\n- *italic* with `*text*` or `_text_`\n\n## Links\n`[RandomBoo](https://randomboo.com/)`\n\n## Lists\nStart lines with `- ` or `* ` (unordered lists only):\n\n- Item one\n- Item two\n- Item three\n\n## Code\nInline `code` and fenced blocks:\n\n```\nconsole.log('hello');\n```\n\n## Images\n`![Alt text](images/image.png)`\n\n> Notes:\n> - Ordered lists, blockquotes, and tables aren’t parsed.\n> - Separate paragraphs with a blank line.\n> - Line breaks inside a paragraph are respected."
+    }
+  ]
+}

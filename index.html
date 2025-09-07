@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="/fonts/share-tech-mono.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="your site description here" />
+  <meta name="keywords" content="keyword_1, keyword_2" />
+
+</head>
+<body>
+  <div id="fx-root" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <h1>BLOG TEMPLATE</h1>
+        <p class="tagline">This is your Tagline</p>
+      </div>
+      <button id="readerToggle" class="reader-btn" type="button" aria-pressed="false" title="Toggle Easy Reader">
+        Easy Reader: Off
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Filters and sort">
+      <nav id="topicFilters" class="filters" aria-label="Filter by topic">
+      </nav>
+
+      <div class="sort">
+        <label for="sortOrder">Sort:</label>
+        <select id="sortOrder">
+          <option value="new">Newest</option>
+          <option value="old">Oldest</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="posts" class="cards"></section>
+
+    <nav class="pagination" aria-label="Pagination">
+      <button id="prevBtn" aria-label="Previous page">« Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn" aria-label="Next page">Next »</button>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>(c)<span id="year"></span> <a href="../" style="color:#000; ">You</a></small>
+    </div>
+  </footer>
+
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
